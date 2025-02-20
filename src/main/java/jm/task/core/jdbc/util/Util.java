@@ -43,13 +43,11 @@ public class Util {
         if (sessionFactory == null) {
             try {
                 Configuration configuration = new Configuration ();
-
                 configuration.setProperty ( "hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver" );
                 configuration.setProperty ( "hibernate.connection.url", URL );
                 configuration.setProperty ( "hibernate.connection.username", USERNAME );
                 configuration.setProperty ( "hibernate.connection.password", PASSWORD );
                 configuration.setProperty ( "hibernate.show_sql", "true" );
-//                configuration.setProperty ( "hibernate.hbm2ddl.auto", "update" );
                 configuration.addAnnotatedClass ( User.class );
                 sessionFactory = configuration.buildSessionFactory ();
             } catch (Exception e) {
